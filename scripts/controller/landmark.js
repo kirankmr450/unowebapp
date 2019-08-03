@@ -247,18 +247,23 @@
 		} else {
 			$("#land_Mark").html("");
 		}
+		
+		if(latitude){
+		if (!Utils.validateLatitude(latitude)) {
+			$("#latitude-code").html("Latitude number should be xx.xxxxxxx");
+		} else {
+			$("#latitude-code").html("");
+		}
+		}
 
-		// if (!Utils.validateLatitude(latitude)) {
-			// $("#latitude-code").html("Latitude number should be xx.xxxxxxx");
-		// } else {
-			// $("#latitude-code").html("");
-		// }
-
-		// if (!Utils.validateLongitude(longitude)) {
-			// $("#longitude-code").html("Longitude number should be xx.xxxxxxx");
-		// } else {
-			// $("#longitude-code").html("");
-		// }
+		if(longitude){
+			
+		if (!Utils.validateLongitude(longitude)) {
+			$("#longitude-code").html("Longitude number should be xx.xxxxxxx");
+		} else {
+			$("#longitude-code").html("");
+		}
+		}
 
 		if (!distance) {
 			$("#distance_Metre").html("Distance must be filled out");

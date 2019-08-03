@@ -4,16 +4,24 @@
 	var mPropertyDetails;
 
 	$(document).ready(() => {
-        if(!Auth.isLoggedIn()) {
+  if(!Auth.isLoggedIn()) {
 			//go to login
 			Nav.gotoLogin();
             return;
 		}
+    
+    		// Search by "pressing enter Button"
+		document.getElementById('search-field').addEventListener('keypress', function (event) {
+			if (event.keyCode == 13) {
+				event.preventDefault();
+				$("#searchProperty").click();
+			}
+		});
         
 		//Declaring main function
 		fetchAllTheProperties();
         
-        $(document).on('click', '#SignOut', function () {
+    $(document).on('click', '#SignOut', function () {
 			Auth.logout();
 			//go to login
 			Nav.gotoLogin();
@@ -139,17 +147,29 @@
 		table = document.getElementById("buildingtitle");
 		tr = table.getElementsByTagName("tr");
 
-		for (i = 0; i < tr.length; i++) {
-			td = tr[i].getElementsByTagName("td")[1];
+		for (i = 1; i < tr.length; i++) {
 
-			if (td) {
-				txtValue = td.textContent || td.innerText;
-				if (txtValue.toUpperCase().indexOf(filter) > -1) {
-					tr[i].style.display = "";
+			var propertyName,
+			city,
+			locality;
+			var nameCol = tr[i].getElementsByTagName("td")[1];
+			if (nameCol)
+				propertyName = nameCol.textContent || nameCol.innerText;
 
-				} else {
-					tr[i].style.display = "none";
-				}
+			var cityCol = tr[i].getElementsByTagName("td")[2];
+			if (cityCol)
+				city = cityCol.textContent || cityCol.innerText;
+
+			var localityCol = tr[i].getElementsByTagName("td")[3];
+			if (localityCol)
+				locality = localityCol.textContent || localityCol.innerText;
+
+			if ((propertyName && propertyName.toUpperCase().indexOf(filter) > -1) ||
+				(city && city.toUpperCase().indexOf(filter) > -1) ||
+				(locality && locality.toUpperCase().indexOf(filter) > -1)) {
+				tr[i].style.display = "";
+			} else {
+				tr[i].style.display = "none";
 			}
 		}
 	}

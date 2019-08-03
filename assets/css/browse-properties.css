@@ -46,7 +46,8 @@ margin-left: 16%;
 
 }
 #search-field {
-width: 400px;
+/* width: 400px; */
+width: 50em;
 }
 
 #myBtn {
@@ -102,7 +103,7 @@ float:left;
 padding:10px;
 }
 #search-field {
-width: 250px;
+width: 40em;
 }
 #main-table{
 margin-left: 22% !important;
@@ -119,7 +120,7 @@ float:left;
 padding:10px;
 }
 #search-field {
-width: 200px;
+width: 30em;
 }
 #main-table{
 margin-left: 23% !important;
@@ -162,6 +163,16 @@ margin-top:-70px;
 .navbar-brand {
 display: none;
 }
+#search-field {
+width: 30em;
+}
+
+.form-group{
+		padding-top:-50px !important;
+	}
+	.fa-search{
+		display:none;
+	}
 
 }
 
@@ -184,6 +195,9 @@ display: none;
 	margin-top:-50px;
 	position:relative;
 	
+}
+#search-field {
+width: 20em;
 }
 	
 	.form-group{
