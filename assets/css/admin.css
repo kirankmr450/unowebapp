@@ -1,0 +1,8 @@
+.dropdown-item {
+padding: .25rem 0.25rem !important;
+}
+.dropdown-menu{
+float: right !important;
+min-width: 8rem !important;
+padding: .2rem 0 !important;
+}

@@ -1,287 +1,134 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>unorooms-admin</title>
-				<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-					<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-						<link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-							<link rel="stylesheet" href="assets/css/styles.css">
-								<style>
-
-
-
-									#navigation{
-									height:auto;
-									}
-									@media screen and (max-width: 768px) {
-									#navigation{
-									height:auto;
-									}
-									.navbar-brand{
-									display:none;
-									}
-									}
-
-
-									input[type='text'][disabled],input[type="email"][disabled], #address1[disabled], #address2[disabled], #description[disabled], #city[disabled], #location[disabled] {
-			                        background-color: #EBEBE4;
-		                            }
-
-									
-
-								</style>
-							</head>
-
-
-							<body>
-								<div class="container-fluid">
-									<div class="row">
-										<div class="col-xl-2 col-lg-2 col-md-3" style="color:#746c6c;background-color:#3f3f3f;"><a href="dashboard1.html"><img src="assets/img/Room_logo.png" style="background-color:#3f3f3f;width:140px;padding:10px;"></a></div>
-											<div class="col-xl-10 col-lg-10 col-md-9" style="background-color:#E0E0E0;">
-												<div class="btn-group" style="float:right;padding:10px;">
-													<button type="button" class="btn btn-default"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></button>
-													<button type="button" class="btn btn-default"><i class="fa fa-bell" aria-hidden="true"></i></button>
-													<div class="btn-group">
-														<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="assets/img/unorooms-admin.png" style="height:30px;width:30px;"> Admin</button>
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Recently Book</a>
-																<a class="dropdown-item" href="#">Sign Out</a>
-															</div>
-														</div>
-													</div>
-
-
-
-
-
-												</div>
-											</div>
-										</div>
-										<div>
-											<div class="container-fluid">
-												<div class="row" style="overflow:hidden;clear:both;">
-													<div class="col-lg-2 col-md-3 col-xl-2" id="navigation" style="padding:0px;background-color:rgb(52,58,64);">
-														<button  onclick="location.href='dashboard1.html';" class="btn btn-dark btn-block btn-lg d-flex" type="button" style="padding-right:20px;padding-left:20px;font-size:14px;border-radius:none !important;">Dashboard</button>
-														<button onclick="location.href='add-building-browse.html';" class="btn btn-dark btn-block btn-lg d-inline-block d-flex" type="button" style="padding-right:20px;padding-left:20px;font-size:14px;margin:0px;">Browse Building</button>
-														<button onclick="location.href='add-building.html';" class="btn btn-dark btn-block btn-lg d-inline-block d-flex" type="button" style="padding-right:20px;padding-left:20px;font-size:14px;margin:0px;">Add Building</button>
-														<button class="btn btn-dark btn-block btn-lg d-inline-block d-flex" type="button" style="padding-right:20px;padding-left:20px;font-size:14px;margin:0px;">Booking Request</button>
-													</div>
-													<div class="col-lg-10 col-md-9 col-xl-10">
-
-
-
-
-
-														<div style="padding:10px;margin:15px;">
-
-															<div class="row" style="color:rgb(13,13,13);background-color:#059dd8;;width:auto;">
-																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col">
-																	<h5 class="align-middle" id="change_content" style="color:rgb(252,253,254);padding-top:7px;">Building Details</h5>
-																</div>
-																<div class="col"><button class="btn btn-warning float-right" id="edit_building" type="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT BUILDING</button></div>
-															</div>
-
-														</div>
-														<div  style="margin:10px 20px;">
-															<div class="row">
-																<div class="form-group col-xl-12">
-
-																	Building Name* <span style="color:red;font-size:12px;"id="build"> </span> <input type="text" class="form-control" value="" disabled id="usr"   name="username">
-																	</div>
-
-																	<div class="form-group col-xl-6 col-lg-6 col-md-6">
-
-																		City* <select class="form-control form-control-sm" id="city" disabled  name="sellist1">
-																			<option></option>
-																		</select>
-
-																	</div>
-																	<div class="form-group col-xl-6 col-lg-6 col-md-6">
-
-																		Location* <span style="color:red;font-size:12px;"id="msg"> </span> <select class="form-control form-control-sm" id="location" disabled  name="sellist2">
-																			<option></option>
-																		</select>
-
-																	</div>
-
-																	<div class="form-group col-xl-12">
-
-																		Address 1* <span style="color:red;font-size:12px;"id="add1"> </span>  <textarea class="form-control" rows="2" id="address1"   disabled name="text"></textarea>
-																	</div>
-																	<div class="form-group col-xl-12">
-
-																		Address 2* <span style="color:red;font-size:12px;"id="add2"></span> <textarea class="form-control" rows="2" id="address2" disabled name="text"></textarea>
-																	</div>
-																	<div class="form-group col-xl-6 col-lg-6 col-md-3">
-
-																		Pincode* <span style="color:red;font-size:12px;"id="pin-code"></span> <input type="text" class="form-control" id="pincode" disabled name="username">
-																		</div>
-																		<div class="form-group col-xl-6 col-lg-6 col-md-9">
-
-																			Email* <span style="color:red;font-size:12px;"id="email-id"></span> <input type="email" class="form-control" id="emailid" disabled placeholder="Enter email" name="email">
-																			</div>
-
-																			<div class="form-group col-xl-6 col-lg-6 col-md-6">
-																				Phone no 1* <span style="color:red;font-size:12px;"id="phone-1"></span> <input type="text" class="form-control" id="phone1" disabled placeholder="10 Digit number" name="text1">
-																				</div>
-																				<div class="form-group col-xl-6 col-lg-6 col-md-6">
-																					Phone no 2:<input type="text" class="form-control" id="phone2" disabled placeholder="10 Digit number" name="text1">
-																					</div>
-																					<div class="form-group col-xl-6 col-lg-6 col-md-6">
-																						Latitude:<input type="text" class="form-control"  id="lat" disabled placeholder="" name="text1">
-																						</div>
-																						<div class="form-group col-xl-6 col-lg-6 col-md-6">
-																							Longitude:<input type="text" class="form-control" id="log" disabled placeholder="" name="text1">
-																							</div>
-																							<div class="form-group col-xl-12">
-
-																								Description:<textarea class="form-control" rows="4" id="description" disabled name="text"></textarea>
-																							</div>
-																							<div class="col">
-																								<div class="float-right">
-																									<button type="button" onclick="location.href='add-building-browse.html';" id="" style=""  class="btn btn-dark"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> BACK</button>
-																									<button type="button" id="Update_building" style="display:none;" class="btn btn-info">UPDATE <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
-																									<button type="button" id="Go_to_Landmark" class="btn btn-primary">NEXT <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-																								</div>
-																							</div>
-
-																						</div>
-																					</div>
-
-
-																				</div>
-																			</div>
-																		</div>
-																		<div class="container-fluid" style="background-color:#01a6f8;bottom:0;right:0;clear:both;">
-																			<div class="row" style="background-color:#01a6f8;overflow:hidden;clear:both;height:35px;">
-																				<div class="col" style="overflow:hidden;clear:both;"><p style="color:rgb(247,248,249);vertical-align:middle;height:30px;line-height:30px;font-size:14px;">Copyright  &copy; 2019 Uno rooms. All rights reserved<br /></p></div>
-																			</div>
-																		</div>
-																	</div>
-																	<script src="assets/js/jquery.min.js"></script>
-																	<script src="assets/js/update.js"></script>
-																	<script src="assets/js/urlvalue.js"></script>
-																	<script src="assets/js/edit.js"></script>
-																	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-																	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-																	<!-- --Select City Data -->
-																	<script>
-																		$(document).ready(function(){
-																		$.getJSON("http://192.168.1.211:3000/meta/cities", function(result){
-																		$.each(result, function(){
-
-																		var city = '';
-
-
-																		var cityplace = result.length;
-																		for(i=0;i<=cityplace-1;i++){
-
-																				city +='<option value="'+result[i]+'">'+ result[i] +'</option>';
-
-
-																				};
-
-																				$("#city").html(city);
-
-																				$(function GetURLParameter(sParam)
-																				{
-																				var sPageURL = window.location.search.substring(1);
-																				var sURLVariables = sPageURL.split('&');
-																				for (var i = 0; i < sURLVariables.length; i++)
-																						{
-																						var sParameterName = sURLVariables[i].split('=');
-																						if (sParameterName[0] == sParam)
-																						{
-																						return sParameterName[1];
-																						}
-																						}
-
-																						var citymatch  = GetURLParameter('city');
-																						var localitymatch  = GetURLParameter('locality');
-
-																						console.log(citymatch,localitymatch);
-
-																						$("#city option").each(function(){
-																						if ($(this).val() == citymatch){
-																						$(this).attr("selected","selected");
-																						}
-																						});
-
-
-																						});
-
-																						});
-																						});
-																						});
-																					</script>
-																					<!-- --Select City Data -->
-
-																					<!-- --Select Locality Data -->
-
-																					<script>
-																						$(document).ready(function(){
-																						$(function GetURLParameter(sParam)
-																						{
-																						var sPageURL = window.location.search.substring(1);
-																						var sURLVariables = sPageURL.split('&');
-																						for (var i = 0; i < sURLVariables.length; i++)
-																								{
-																								var sParameterName = sURLVariables[i].split('=');
-																								if (sParameterName[0] == sParam)
-																								{
-																								return sParameterName[1];
-																								}
-																								}
-																								var citymatch  = GetURLParameter('city');
-																								var localitymatch  = GetURLParameter('locality');
-																								         var testing = localitymatch.replace(/%20/g, " ");
-																										 console.log(testing);
-
-																								$.getJSON('http://192.168.1.211:3000/meta/localities?city=' + citymatch, function(result){
-																								$.each(result, function(){
-																								var locality = '';
-
-
-																								var localityplace = result.length;
-																								for(i=0;i<=localityplace-1;i++){
-
-																										locality +='<option value="'+result[i]+'">'+ result[i] +'</option>';
-
-
-																										};
-
-																										$("#location").html(locality);
-																										<!--- Select Locality Data -->
-																										$("#location option").each(function(){
-																										if ($(this).val() == testing){
-																										$(this).attr("selected","selected");
-																										}
-																										});
-																										<!--- Select Locality Data -->
-
-
-
-																										});	
-																										});	
-
-
-
-
-
-
-
-																										});
-																										});
-
-																									</script>
-
-																									<!-- --Select Locality Data -->
-
-
-
-																								</body>
-																							</html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unorooms-admin</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/view-building-browse.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='assets/load-html/load.js'></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- logo -->
+            <span class="col-xl-2 col-lg-2 col-md-3" id="unoroom-logo"></span>
+            <div class="col-xl-10 col-lg-10 col-md-9" id="dashboard_secondpart">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4" style="float:left;">
+                    <h5 class="align-middle" id="change_content" style="color:rgb(0,0,0);padding-top:20px;">View Property Details</h5>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 btn-group btn-group" id="Add-admin-dropdown">
+                    <div class="col" id="Plus-button"><a id="edit_building" style="float:right;padding-top:5px;padding-right:100px;cursor: pointer;"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></div>
+                    <!-- admin-dropdown -->
+                    <div id="admin-drop-down"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container-fluid">
+            <div class="row" style="overflow:hidden;clear:both;">
+                <div class="col-lg-2 col-md-3 col-xl-2" id="navigation">
+                    <!-- Browse navigation -->
+                    <div id="browse-navigation"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 col-xl-10" id="main-table">
+                    <div style="margin:10px 20px;">
+                        <div class="row">
+                            <div class="form-group col-xl-12" style="border:1px solid black;padding:10px;">
+                                <div class="form-row">
+                                    <div class="form-group col-xl-4 col-lg-4 col-md-4">
+                                        Building ID <input type="text" class="form-control" value="" id="building-ID" name="username" disabled />
+                                    </div>
+                                    <div class="form-group col-xl-8 col-lg-8 col-md-8">
+                                        Building Name* <span style="color:red;font-size:12px;" id="build"> </span> <input type="text" class="form-control" disabled value="" id="usr" name="username">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-xl-4 col-lg-4 col-md-4">
+                                        City* <select class="form-control form-control-sm" id="city" disabled name="sellist1">
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xl-4 col-lg-4 col-md-4">
+                                        Location* <span style="color:red;font-size:12px;" id="msg"> </span> <select class="form-control form-control-sm" id="location" disabled name="sellist2">
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xl-4 col-lg-4 col-md-4">
+                                        Property Type* <span style="color:red;font-size:12px;" id="msg"> </span> <select class="form-control form-control-sm" id="property-type" disabled name="sellist2">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-xl-12" style="border:1px solid black;padding:10px;">
+                                <div class="form-row">
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                        Address Line 1* <span style="color:red;font-size:12px;" id="add1"> </span> <input type="text" class="form-control" id="address1" disabled value="" placeholder=" #, Street, Area Name" name="text">
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                        Address Line 2* <span style="color:red;font-size:12px;" id="add2"></span> <input type="text" class="form-control" id="address2" disabled value="" placeholder="State, City - Pincode" name="text">
+                                    </div>
+                                    <div class="form-group col-xl-3 col-lg-3 col-md-3">
+                                        Pincode* <span style="color:red;font-size:12px;" id="pin-code"></span> <input type="text" class="form-control" id="pincode" disabled value="" placeholder="6 digit pincode" name="username">
+                                    </div>
+                                    <div class="form-group col-xl-3 col-lg-3 col-md-3">
+                                        State <span style="color:red;font-size:12px;"></span> <select class="form-control form-control-sm" id="state" disabled name="sellist2">
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                        Email* <span style="color:red;font-size:12px;" id="email-id"></span> <input type="email" class="form-control" id="emailid" disabled value="" placeholder="Enter email" name="email">
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                        Phone no 1* <span style="color:red;font-size:12px;" id="phone-1"></span> <input type="text" class="form-control" disabled id="phone1" value="" placeholder="10 Digit number" name="text1">
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                        Phone no 2 <input type="text" class="form-control" id="phone2" value="" placeholder="10 Digit number" disabled name="text1">
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                        Latitude <input type="text" class="form-control" id="lat" value="" placeholder="" disabled name="text1">
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                        Longitude <input type="text" class="form-control" id="log" value="" placeholder="" disabled name="text1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-xl-12" style="border:1px solid black;padding:10px;">
+                                Description:<textarea class="form-control" rows="4" id="description" disabled name="text"></textarea>
+                            </div>
+                            <div class="col">
+                                <div class="float-right">
+
+                                    <button type="button" id="Update_building" style="display:none;" class="btn btn-info">UPDATE PROPERTY <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                                    <button type="button" id="Go_to_Landmark" style="display:none;" class="btn btn-primary ADD_LANDMARK">ADD LANDMARK <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                                    <button type="button" id="Go_to_Landmark" style="display:none;" class="btn btn-primary VIEW_LANDMARK">VIEW LANDMARK <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="myBtn" title="Go to top">Top</button>
+                    <div style="height:50px;"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+
+	<script src='scripts/utils.js'></script>
+    <script src='scripts/navigation.js'></script>
+    
+    <script src='scripts/api/api.js'></script>
+	<script src='scripts/api/meta.js'></script>
+	<script src='scripts/api/auth.js'></script>
+    <script src='scripts/api/property.js'></script>    
+    <script src='scripts/controller/view-building.js'></script>
+</body>
+
+</html>

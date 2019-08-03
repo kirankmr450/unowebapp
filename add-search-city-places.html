@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>unorooms-admin</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/admin.css">
+        <link rel="stylesheet" href="assets/css/search-by-city-styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src='assets/load-html/load.js'></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- logo -->
+                <span class="col-xl-2 col-lg-2 col-md-3"  id="unoroom-logo"></span>
+                <div class="col-xl-10 col-lg-10 col-md-9" id="dashboard_secondpart">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4" style="float:left;">
+                        <h5 class="align-middle" style="color:rgb(0,0,0);padding-top:15px;">Add Search by City Places</h5>
+                    </div>
+                    <div class="btn-group" id="Add-admin-dropdown">
+                        <!-- admin-dropdown -->
+                        <div id="admin-drop-down"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container-fluid">
+                <div class="row" style="overflow:hidden;clear:both;">
+                    <div class="col-lg-2 col-md-3 col-xl-2" id="navigation">
+                        <!-- Browse navigation -->
+                        <div id="browse-navigation"></div>
+                    </div>
+                    <div class="col-lg-10 col-md-9 col-xl-10" id="main-table">
+                        <div class="row" style="margin:10px 20px;">
+                            <div class="form-group col-xl-12" style="border:1px solid black;">
+                                <div class="form-row">
+                                    <div  id="div1-wrapper" style="margin:10px 20px;">
+                                        <div class="row" id="div1">
+                                            <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                                City* <select class="form-control form-control-sm" id="city"   name="sellist1">
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                                Location* <span style="color:red;font-size:12px;"id="msg"> </span> <select class="form-control form-control-sm" id="location"   name="sellist2">
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                            Latitude* <span style="color:red;font-size:12px;"id="latitude-code"></span> <input type="text" class="form-control form-control-sm"  id="landmark_lat" value=""  placeholder="" name="text1">
+                                        </div>
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                                            Longitude* <span style="color:red;font-size:12px;"id="longitude-code"></span> <input type="text" class="form-control form-control-sm" id="landmark_log" value=""  placeholder="" name="text1">
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-3">
+                                            <!-- <div id="flex-container"> -->
+                                            <div  class="" id="dialog">
+                                                <span style="color:red;font-size:12px;" id="dialog2"> </span>
+                                                <label type="button" class="btn btn-primary" style="margin-top:20px;">
+                                                    Upload Location Images <i class="fa fa-upload" aria-hidden="true"></i>
+                                                    <input type="file"  name="file" id="file"  style="display:none;">
+                                                </label>
+                                            </div>
+                                            <!-- </div> -->
+                                        </div>
+                                        <div class="col-xl-12" style="margin-top:20px;">
+                                            <div class="float-left">
+                                            </div>
+                                            <div class="float-right">
+                                                <button type="button" id="edit_Landmark" style="display:none;"  class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT</button>
+                                                <button type="button" id="Update_landMark" style="display:none;" class="btn btn-info" value="" >UPDATE <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                                                <button type="button" id="Delete_landmark" style="display:none;"  class="btn btn-danger">DELETE <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                <button type="button" id="save_image"  class="btn btn-info">SAVE <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="delete_image"></div>
+                    <div style="padding:10px;margin:0px 25px;">
+                        <div class="row" style="color:rgb(13,13,13);background-color:#059dd8;;width:auto;">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col">
+                                <h5 class="align-middle" style="color:rgb(252,253,254);padding-top:7px;">View Search By City</h5>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div  style="margin:0px 20px;overflow-x:auto;">
+                        <table style="width:100%" id="buildingtitle">
+                            <thead>
+                                <tr>
+                                    <th>Sr.no</th>
+                                    <th>IMAGE</th>
+                                    <th>City</th>
+                                    <th>Location</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button  id="myBtn" title="Go to top">Top</button>
+						<div style="height:50px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+<script src='scripts/utils.js'></script>
+<script src='scripts/navigation.js'></script>
+
+<script src='scripts/api/api.js'></script>
+<script src='scripts/api/meta.js'></script>
+<script src='scripts/api/auth.js'></script>
+<script src='scripts/api/property.js'></script>
+<script src='scripts/api/ui.js'></script>
+<script src='scripts/controller/search-by-city.js'></script>
+</body>
+</html>

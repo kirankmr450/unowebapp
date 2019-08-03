@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unorooms-admin</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/browse-properties.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='assets/load-html/load.js'></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- logo -->
+            <span class="col-xl-2 col-lg-2 col-md-3" id="unoroom-logo"></span>
+            <div class="col-xl-10 col-lg-10 col-md-9" id="dashboard_secondpart">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4" style="float:left;">
+                    <h5 class="align-middle" style="color:rgb(0,0,0);padding-top:15px;">Building List</h5>
+                </div>
+
+
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 btn-group" id="Add-admin-dropdown" style="">
+                    <div class="col" id="Plus-button"><a onclick="location.href='add-building.html';" style="float:right;padding-top:5px;padding-right:100px;cursor: pointer;"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></div>
+                    <!-- admin-dropdown -->
+                    <div id="admin-drop-down"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container-fluid" style="position:relative;">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-xl-2" id="navigation">
+                    <!-- Browse navigation -->
+                    <div id="browse-navigation"></div>
+                </div>
+                <div class="col-lg-10 col-md-9 col-xl-10" id="main-table">
+                    <div style="padding:5px;margin:15px;margin-top:-5px;">
+                        <nav class="navbar navbar-light navbar-expand float-right navigation-clean-search" style="padding-right:0px;padding-left:0px;width:100%;height:34px;">
+                            <div class="container-fluid"><a class="navbar-brand" href="#" style="font-weight:normal;font-size:15px;background-color:#04457a;color:rgb(247,246,246);padding:5px;padding-right:5px;margin:0px;margin-right:5px;pointer-events:none;cursor: default;">Search by Building Name</a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse" id="navcol-1"">
+                                    <form class=" form-inline mr-auto" target="_self">
+                                    <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field" style=""></div>
+                                    </form><a class="btn btn-light action-button" role="button" id="searchProperty">Search</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div style="margin:50px 20px;overflow-x:auto;">
+                        <table style="width:100%" id="buildingtitle">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Building Name</th>
+                                    <th>City</th>
+                                    <th>Locality</th>
+                                    <th>Status</th>
+                                    <th>Type</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button id="myBtn" title="Go to top">Top</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="footer"></div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src='scripts/utils.js'></script>
+    <script src='scripts/navigation.js'></script>
+
+    <script src='scripts/api/api.js'></script>
+    <script src='scripts/api/meta.js'></script>
+    <script src='scripts/api/auth.js'></script>
+    <script src='scripts/api/property.js'></script>
+    <script src='scripts/controller/browse-property.js'></script>
+</body>
+
+</html>

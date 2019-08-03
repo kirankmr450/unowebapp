@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>unorooms-admin</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/dashboard.css">
+        <link rel="stylesheet" href="assets/css/admin.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src='assets/load-html/load.js'></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+			<!-- logo -->
+			<span class="col-xl-2 col-lg-2 col-md-3"  id="unoroom-logo"></span>
+                
+                <div class="col-xl-10 col-lg-10 col-md-9" id="dashboard_secondpart">
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4" style="float:left;">
+                    <h5 class="align-middle" style="color:rgb(0,0,0);padding-top:20px;">Dashboard</h5></div>
+                    <div class="btn-group" id="Add-admin-dropdown">
+                        <!-- admin-dropdown -->
+                        <div id="admin-drop-down"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container-fluid">
+                <div class="row" style="overflow:hidden;clear:both;">
+                    <div class="col-lg-2 col-md-3 col-xl-2" id="navigation">
+					<!-- Browse navigation -->
+					<div id="browse-navigation"></div>
+                    </div>
+                    <div class="col-lg-10 col-md-9 col-xl-10" style="margin-top:20px;" id="main-table">
+                        
+                        <div class="row">
+                            
+                            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-8" onclick="location.href='browse-properties.html';" style="cursor:pointer;background-color:#bc063f;border-radius:20px;text-align:center;margin:20px;margin-left:20px;">
+                                <h6 class="text-center" style="color:rgb(249,250,252);font-weight:400;padding-top:10px;">Browse Property</h6>
+                            <img src="assets/img/add-browse-building.png" style="width:90px;padding-bottom:10px;" /></div>
+                            
+                            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-8" onclick="location.href='add-building.html';" style="cursor:pointer;background-color:#059DD8;border-radius:20px;text-align:center;margin-right:0px;width:200px;margin:20px;">
+                                <h6 class="text-center" style="color:rgb(249,250,252);font-weight:400;padding-top:10px;">Add Property</h6>
+                            <img src="assets/img/add-browse-building.png" style="width:90px;padding-bottom:10px;" /></div>
+                            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-8" style="background-color:#37A504;border-radius:20px;text-align:center;margin-right:0px;width:200px;margin:20px;">
+                                <h6 class="text-center" style="color:rgb(249,250,252);font-weight:400;padding-top:10px;">Booking Request</h6>
+                            <img src="assets/img/add-browse-building.png" style="width:90px;padding-bottom:10px;" /></div>
+                            
+                        </div>
+						<button  id="myBtn" title="Go to top">Top</button>
+						<div style="height:50px;"></div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="scripts/api/auth.js"></script>
+		<script src='scripts/controller/navigation.js'></script>
+		<script src='scripts/controller/top-button.js'></script>
+    </body>
+</html>

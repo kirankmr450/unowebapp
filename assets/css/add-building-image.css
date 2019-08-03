@@ -1,0 +1,194 @@
+#unoroom-logo{
+color:#746c6c;
+background-color:#3f3f3f;
+position:fixed;
+top:0;
+left:0;
+height:200px;
+z-index:1;
+}
+#dashboard_secondpart{
+background-color:#E0E0E0;
+margin-left: 16%;
+
+}
+#Add-admin-dropdown{
+float:right;
+padding:10px;
+}
+#navigation {
+height: 100%;
+position: fixed;
+z-index: 1;
+top: 5;
+left: 0;
+background-color:rgb(52,58,64);
+overflow-x: hidden;
+padding:0;
+}
+#main-table{
+margin-left: 16%;
+}
+#landmark_type[disabled],#landmar_type[disabled]{
+background-color: #EBEBE4;
+}
+input[type='text'][disabled]{
+background-color: #EBEBE4;
+}
+#flex-container {
+display: flex;
+flex-wrap: wrap;
+border:1px solid black;
+}
+input[type="file"] {
+display: block;
+}
+.imageThumb {
+height: 50px;
+width: 70px;
+border: 1px solid;
+cursor: pointer;
+
+}
+.imageThumbing{
+height: 100px;
+width: 150px;
+border: 1px solid;
+cursor: pointer;
+}
+.pip {
+position: relative;
+display: inline-block;
+}
+.remove {
+position:relative;
+background:red;
+font-size:12px;
+width:20px;
+color: white;
+text-align: center;
+cursor: pointer;
+float:right;
+right:20px;
+
+}
+.remove:hover {
+background:black;
+color: white;
+}
+
+#footer{
+position: fixed;
+height: 30px;
+bottom: 0;
+left: 0;
+width:100%;
+z-index: 1;
+background-color:#09ABE6;
+}
+#myBtn {
+display: none;
+position: fixed;
+bottom: 10px;
+right: 10px;
+z-index: 99;
+font-size: 16px;
+border: none;
+outline: none;
+background-color: rgb(52,58,64);
+color: white;
+cursor: pointer;
+padding: 13px;
+border-radius: 4px;
+}
+
+#myBtn:hover {
+background-color: #555;
+}
+
+
+@media screen and (max-width: 1024px) {
+#dashboard_secondpart{
+background-color:#E0E0E0;
+margin-left: 17%;
+}
+#Add-admin-dropdown{
+float:right;
+padding:10px;
+}
+#main-table{
+margin-left: 16% !important;
+}
+
+}
+@media screen and (max-width: 990px) {
+#dashboard_secondpart{
+background-color:#E0E0E0;
+margin-left: 25%;
+z-index:1;
+}
+#Add-admin-dropdown{
+float:right;
+padding:10px;
+}
+#main-table{
+margin-left: 24% !important;
+}
+
+}
+@media screen and (max-width: 770px) {
+#dashboard_secondpart{
+background-color:#E0E0E0;
+margin-left: 20%;
+}
+#Add-admin-dropdown{
+float:right;
+padding:10px;
+}
+#main-table{
+margin-left: 23% !important;
+}	
+}
+@media screen and (max-width: 768px) {
+#navigation {
+height: auto;
+position: relative !important;
+width:100% ! important;
+}
+#main-table{
+margin-left: 5px !important;
+/* margin-top:300px !important; */
+}
+#dashboard_secondpart{
+margin-left: 0 !important;
+width:100% ! important;
+}
+#unoroom-logo{
+position:relative !important;
+height:auto !important;
+width:100% ! important;
+}
+#Add-admin-dropdown{
+float:right !important;
+padding:10px;
+margin-right:50px;
+/* z-index:1; */
+/* position:relative; */
+/* overflow-x: visible; */
+margin-top:-65px;
+
+}
+.navbar-brand {
+display: none;
+}
+
+}
+
+@media screen and (max-width: 575px) {
+#Add-admin-dropdown{
+float:right !important;
+padding:10px;
+margin-right:10px;
+margin-top:-120px;
+}
+}
